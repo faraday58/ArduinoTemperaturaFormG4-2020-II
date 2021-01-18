@@ -51,5 +51,13 @@ namespace ArduinoTemperaturaFormG4_2020_II
         {
             serialPort.Open();
         }
+
+        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPruebaLED formPruebaLED = new FormPruebaLED(serialPort);
+            formPruebaLED.MdiParent = this;
+            formPruebaLED.Show();
+
+        }
     }
 }

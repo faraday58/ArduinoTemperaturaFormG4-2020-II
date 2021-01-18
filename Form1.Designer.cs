@@ -135,6 +135,7 @@
             this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
             this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.pruebaToolStripMenuItem.Text = "Prueba";
+            this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
             // 
             // aplicacionesToolStripMenuItem
             // 

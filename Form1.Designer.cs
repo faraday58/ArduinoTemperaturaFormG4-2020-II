@@ -32,7 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puertosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripCMBpuertos = new System.Windows.Forms.ToolStripComboBox();
             this.velocidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripCMBvelocidad = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.verificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,15 +76,34 @@
             // 
             // puertosToolStripMenuItem
             // 
+            this.puertosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripCMBpuertos});
             this.puertosToolStripMenuItem.Name = "puertosToolStripMenuItem";
             this.puertosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.puertosToolStripMenuItem.Text = "Puertos";
             // 
+            // toolStripCMBpuertos
+            // 
+            this.toolStripCMBpuertos.Name = "toolStripCMBpuertos";
+            this.toolStripCMBpuertos.Size = new System.Drawing.Size(121, 33);
+            // 
             // velocidadToolStripMenuItem
             // 
+            this.velocidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripCMBvelocidad});
             this.velocidadToolStripMenuItem.Name = "velocidadToolStripMenuItem";
             this.velocidadToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.velocidadToolStripMenuItem.Text = "Velocidad";
+            // 
+            // toolStripCMBvelocidad
+            // 
+            this.toolStripCMBvelocidad.Items.AddRange(new object[] {
+            "2400",
+            "4800",
+            "9600",
+            "19200"});
+            this.toolStripCMBvelocidad.Name = "toolStripCMBvelocidad";
+            this.toolStripCMBvelocidad.Size = new System.Drawing.Size(121, 33);
             // 
             // toolStripMenuItem1
             // 
@@ -94,12 +115,14 @@
             this.verificarToolStripMenuItem.Name = "verificarToolStripMenuItem";
             this.verificarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.verificarToolStripMenuItem.Text = "Verificar";
+            this.verificarToolStripMenuItem.Click += new System.EventHandler(this.verificarToolStripMenuItem_Click);
             // 
             // conectarToolStripMenuItem
             // 
             this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
             this.conectarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.conectarToolStripMenuItem.Text = "Conectar";
+            this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
             // desconectarToolStripMenuItem
             // 
@@ -126,19 +149,19 @@
             // pruebaLEDToolStripMenuItem
             // 
             this.pruebaLEDToolStripMenuItem.Name = "pruebaLEDToolStripMenuItem";
-            this.pruebaLEDToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pruebaLEDToolStripMenuItem.Size = new System.Drawing.Size(212, 34);
             this.pruebaLEDToolStripMenuItem.Text = "Prueba LED";
             // 
             // semáforoToolStripMenuItem
             // 
             this.semáforoToolStripMenuItem.Name = "semáforoToolStripMenuItem";
-            this.semáforoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.semáforoToolStripMenuItem.Size = new System.Drawing.Size(212, 34);
             this.semáforoToolStripMenuItem.Text = "Semáforo";
             // 
             // temperaturaToolStripMenuItem
             // 
             this.temperaturaToolStripMenuItem.Name = "temperaturaToolStripMenuItem";
-            this.temperaturaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.temperaturaToolStripMenuItem.Size = new System.Drawing.Size(212, 34);
             this.temperaturaToolStripMenuItem.Text = "Temperatura";
             this.temperaturaToolStripMenuItem.Click += new System.EventHandler(this.temperaturaToolStripMenuItem_Click);
             // 
@@ -175,6 +198,8 @@
         private System.Windows.Forms.ToolStripMenuItem pruebaLEDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem semáforoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem temperaturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripCMBpuertos;
+        private System.Windows.Forms.ToolStripComboBox toolStripCMBvelocidad;
     }
 }
 

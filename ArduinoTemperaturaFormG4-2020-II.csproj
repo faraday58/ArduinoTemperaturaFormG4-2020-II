@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>D:\Users\PC\Documents\Visual Studio 2017\Projects\ArduinoTemperatura\ArduinoTemperatura\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>D:\Users\PC\Documents\Visual Studio 2017\Projects\ArduinoTemperatura\ArduinoTemperatura\bin\Debug\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>D:\Users\PC\Documents\Visual Studio 2017\Projects\ArduinoTemperatura\ArduinoTemperatura\bin\Debug\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />

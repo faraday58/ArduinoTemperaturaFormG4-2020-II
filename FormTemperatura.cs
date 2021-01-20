@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
-using System.IO.Ports;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 
 namespace ArduinoTemperaturaFormG4_2020_II
 {
@@ -128,6 +130,23 @@ namespace ArduinoTemperaturaFormG4_2020_II
         private void pararToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tiempoTemperatura.Stop();
+        }
+
+        private void exportarAPDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Document docPdf = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                PdfWriter pdfWriter = PdfWriter.GetInstance(docPdf, new FileStream(saveFileDialog.FileName, FileMode.Append));
+                docPdf.Open();
+                MemoryStream imagenGraficar = new MemoryStream();
+                chtTemperatura.SaveImage(imagenGraficar, System.Windows.Forms.DataVisualization.Charting.ChartImageFormat.Png);
+                iTextSharp.text.Image GrafPdf = iTextSharp.text.Image.GetInstance(imagenGraficar.GetBuffer());
+                docPdf.Add(GrafPdf);
+                docPdf.Close();
+            }
+
         }
     }
 }

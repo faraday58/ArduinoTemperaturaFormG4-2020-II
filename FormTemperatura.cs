@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.IO.Ports;
 
 namespace ArduinoTemperaturaFormG4_2020_II
 {
     public partial class FormTemperatura : Form
     {
-        Form formpadre;
-        public FormTemperatura(Form formpadre)
+        Form1 formpadre;
+        int tiempo;
+        int temperatura;
+        public FormTemperatura(Form1 formpadre)
         {
             InitializeComponent();
-            formpadre = this;
+            this.formpadre = formpadre;
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,13 +107,27 @@ namespace ArduinoTemperaturaFormG4_2020_II
                 finally
                 {
                     sr.Close();
-                }
-               
-
-
+                }            
 
             }
 
+        }
+
+        private void tiempoTemperatura_Tick(object sender, EventArgs e)
+        {
+            temperatura = formpadre.serialPort.ReadByte();
+            chtTemperatura.Series[0].Points.AddXY(tiempo++, temperatura);
+
+        }
+
+        private void iniciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tiempoTemperatura.Start();
+        }
+
+        private void pararToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tiempoTemperatura.Stop();
         }
     }
 }

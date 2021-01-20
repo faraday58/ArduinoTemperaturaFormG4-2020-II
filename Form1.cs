@@ -9,7 +9,7 @@ namespace ArduinoTemperaturaFormG4_2020_II
 {
     public partial class Form1 : Form
     {
-        private SerialPort serialPort;
+        public SerialPort serialPort;
         public Form1()
         {
             InitializeComponent();
